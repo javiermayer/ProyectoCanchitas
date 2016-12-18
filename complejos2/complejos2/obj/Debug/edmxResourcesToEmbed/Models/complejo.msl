@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Complejos2ModelStoreContainer" CdmEntityContainer="Complejos2Entities">
+    <EntitySetMapping Name="cancha">
+      <EntityTypeMapping TypeName="Complejos2Model.cancha">
+        <MappingFragment StoreEntitySet="cancha">
+          <ScalarProperty Name="id_cancha" ColumnName="id_cancha" />
+          <ScalarProperty Name="id_complejo" ColumnName="id_complejo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="horarios" ColumnName="horarios" />
+          <ScalarProperty Name="disponible" ColumnName="disponible" />
+          <ScalarProperty Name="horas" ColumnName="horas" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="complejo">
+      <EntityTypeMapping TypeName="Complejos2Model.complejo">
+        <MappingFragment StoreEntitySet="complejo">
+          <ScalarProperty Name="dueño" ColumnName="dueño" />
+          <ScalarProperty Name="id_complejo" ColumnName="id_complejo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="numero_de_canchas" ColumnName="numero_de_canchas" />
+          <ScalarProperty Name="telefono_complejo" ColumnName="telefono_complejo" />
+          <ScalarProperty Name="mail" ColumnName="mail" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="horas">
+      <EntityTypeMapping TypeName="Complejos2Model.horas">
+        <MappingFragment StoreEntitySet="horas">
+          <ScalarProperty Name="id_horoas" ColumnName="id_horoas" />
+          <ScalarProperty Name="C1" ColumnName="1" />
+          <ScalarProperty Name="C2" ColumnName="2" />
+          <ScalarProperty Name="C3" ColumnName="3" />
+          <ScalarProperty Name="C4" ColumnName="4" />
+          <ScalarProperty Name="C5" ColumnName="5" />
+          <ScalarProperty Name="C6" ColumnName="6" />
+          <ScalarProperty Name="C7" ColumnName="7" />
+          <ScalarProperty Name="C8" ColumnName="8" />
+          <ScalarProperty Name="C9" ColumnName="9" />
+          <ScalarProperty Name="C10" ColumnName="10" />
+          <ScalarProperty Name="C11" ColumnName="11" />
+          <ScalarProperty Name="C12" ColumnName="12" />
+          <ScalarProperty Name="C13" ColumnName="13" />
+          <ScalarProperty Name="C14" ColumnName="14" />
+          <ScalarProperty Name="C15" ColumnName="15" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reserva">
+      <EntityTypeMapping TypeName="Complejos2Model.reserva">
+        <MappingFragment StoreEntitySet="reserva">
+          <ScalarProperty Name="id_reserva" ColumnName="id_reserva" />
+          <ScalarProperty Name="usuario_que_alquila" ColumnName="usuario_que_alquila" />
+          <ScalarProperty Name="cancha_alquilada" ColumnName="cancha_alquilada" />
+          <ScalarProperty Name="fecha_efectuado_alquiler" ColumnName="fecha_efectuado_alquiler" />
+          <ScalarProperty Name="hora_ectuado_alquiler" ColumnName="hora_ectuado_alquiler" />
+          <ScalarProperty Name="hora_a_jugar" ColumnName="hora_a_jugar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_cancha">
+      <EntityTypeMapping TypeName="Complejos2Model.tipo_cancha">
+        <MappingFragment StoreEntitySet="tipo_cancha">
+          <ScalarProperty Name="id_tipo" ColumnName="id_tipo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Tamaño_de_cancha" ColumnName="Tamaño_de_cancha" />
+          <ScalarProperty Name="tipo_suelo" ColumnName="tipo_suelo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="Complejos2Model.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
+          <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
+          <ScalarProperty Name="apellido_usuario" ColumnName="apellido_usuario" />
+          <ScalarProperty Name="email_usuario" ColumnName="email_usuario" />
+          <ScalarProperty Name="telefono_usuario" ColumnName="telefono_usuario" />
+          <ScalarProperty Name="rol" ColumnName="rol" />
+          <ScalarProperty Name="edad" ColumnName="edad" />
+          <ScalarProperty Name="canchas_alquiladas" ColumnName="canchas_alquiladas" />
+          <ScalarProperty Name="reputacion" ColumnName="reputacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

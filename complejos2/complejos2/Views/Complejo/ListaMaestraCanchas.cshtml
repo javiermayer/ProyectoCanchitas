@@ -1,0 +1,63 @@
+﻿@model IEnumerable<complejos2.Models.cancha>
+
+@{
+    ViewBag.Title = "ListaMaestraCanchas";
+}
+
+<h2>ListaMaestraCanchas</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id_cancha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.id_complejo)
+        </th>
+       
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horas)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_cancha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_complejo)
+        </td>
+        <td>
+           @*@ @Html.DisplayFor(modelItem => item.nombre)*@
+        </td>
+        <td>
+          
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.id_tipo)
+        </td>
+        <td>
+            
+        </td>
+        <td>
+           @Html.DisplayFor(modelItem => item.disponible)
+        </td>
+        <td>
+           @*@ @Html.DisplayFor(modelItem => item.horas)*@
+            @Html.ActionLink(item.nombre, "HorarioPorCancha", "complejo")
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

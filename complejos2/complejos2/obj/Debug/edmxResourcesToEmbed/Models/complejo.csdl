@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Complejos2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="cancha">
+    <Key>
+      <PropertyRef Name="id_cancha" />
+    </Key>
+    <Property Name="id_cancha" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_complejo" Type="Int32" />
+    <Property Name="nombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="id_tipo" Type="Int32" />
+    <Property Name="horarios" Type="Int32" />
+    <Property Name="disponible" Type="Boolean" />
+    <Property Name="horas" Type="Int32" />
+    <NavigationProperty Name="horas1" Relationship="Self.FK__cancha__horas__2E1BDC42" FromRole="cancha" ToRole="horas" />
+    <NavigationProperty Name="complejo" Relationship="Self.FK__cancha__id_compl__173876EA" FromRole="cancha" ToRole="complejo" />
+    <NavigationProperty Name="tipo_cancha" Relationship="Self.FK__cancha__id_tipo__182C9B23" FromRole="cancha" ToRole="tipo_cancha" />
+    <NavigationProperty Name="reserva" Relationship="Self.FK__reserva__cancha___1CF15040" FromRole="cancha" ToRole="reserva" />
+  </EntityType>
+  <EntityType Name="complejo">
+    <Key>
+      <PropertyRef Name="id_complejo" />
+    </Key>
+    <Property Name="dueño" Type="Int32" />
+    <Property Name="id_complejo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="numero_de_canchas" Type="Int32" Nullable="false" />
+    <Property Name="telefono_complejo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="facebook" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cancha" Relationship="Self.FK__cancha__id_compl__173876EA" FromRole="complejo" ToRole="cancha" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__complejo__dueño__1273C1CD" FromRole="complejo" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="horas">
+    <Key>
+      <PropertyRef Name="id_horoas" />
+    </Key>
+    <Property Name="id_horoas" Type="Int32" Nullable="false" />
+    <Property Name="C1" Type="Int32" />
+    <Property Name="C2" Type="Int32" />
+    <Property Name="C3" Type="Int32" />
+    <Property Name="C4" Type="Int32" />
+    <Property Name="C5" Type="Int32" />
+    <Property Name="C6" Type="Int32" />
+    <Property Name="C7" Type="Int32" />
+    <Property Name="C8" Type="Int32" />
+    <Property Name="C9" Type="Int32" />
+    <Property Name="C10" Type="Int32" />
+    <Property Name="C11" Type="Int32" />
+    <Property Name="C12" Type="Int32" />
+    <Property Name="C13" Type="Int32" />
+    <Property Name="C14" Type="Int32" />
+    <Property Name="C15" Type="Int32" />
+    <NavigationProperty Name="cancha" Relationship="Self.FK__cancha__horas__2E1BDC42" FromRole="horas" ToRole="cancha" />
+  </EntityType>
+  <EntityType Name="reserva">
+    <Key>
+      <PropertyRef Name="id_reserva" />
+    </Key>
+    <Property Name="id_reserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="usuario_que_alquila" Type="Int32" />
+    <Property Name="cancha_alquilada" Type="Int32" />
+    <Property Name="fecha_efectuado_alquiler" Type="DateTime" Precision="3" />
+    <Property Name="hora_ectuado_alquiler" Type="Time" Precision="7" />
+    <Property Name="hora_a_jugar" Type="Int32" />
+    <NavigationProperty Name="cancha" Relationship="Self.FK__reserva__cancha___1CF15040" FromRole="reserva" ToRole="cancha" />
+    <NavigationProperty Name="usuario" Relationship="Self.FK__reserva__usuario__1BFD2C07" FromRole="reserva" ToRole="usuario" />
+  </EntityType>
+  <EntityType Name="tipo_cancha">
+    <Key>
+      <PropertyRef Name="id_tipo" />
+    </Key>
+    <Property Name="id_tipo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Tamaño_de_cancha" Type="Int32" />
+    <Property Name="tipo_suelo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="cancha" Relationship="Self.FK__cancha__id_tipo__182C9B23" FromRole="tipo_cancha" ToRole="cancha" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="id_usuario" />
+    </Key>
+    <Property Name="id_usuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre_usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="apellido_usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email_usuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="telefono_usuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rol" Type="Int32" />
+    <Property Name="edad" Type="Int32" />
+    <Property Name="canchas_alquiladas" Type="Int32" />
+    <Property Name="reputacion" Type="Int32" />
+    <NavigationProperty Name="complejo" Relationship="Self.FK__complejo__dueño__1273C1CD" FromRole="usuario" ToRole="complejo" />
+    <NavigationProperty Name="reserva" Relationship="Self.FK__reserva__usuario__1BFD2C07" FromRole="usuario" ToRole="reserva" />
+  </EntityType>
+  <Association Name="FK__cancha__horas__2E1BDC42">
+    <End Role="horas" Type="Self.horas" Multiplicity="0..1" />
+    <End Role="cancha" Type="Self.cancha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="horas">
+        <PropertyRef Name="id_horoas" />
+      </Principal>
+      <Dependent Role="cancha">
+        <PropertyRef Name="horas" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cancha__id_compl__173876EA">
+    <End Role="complejo" Type="Self.complejo" Multiplicity="0..1" />
+    <End Role="cancha" Type="Self.cancha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="complejo">
+        <PropertyRef Name="id_complejo" />
+      </Principal>
+      <Dependent Role="cancha">
+        <PropertyRef Name="id_complejo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__cancha__id_tipo__182C9B23">
+    <End Role="tipo_cancha" Type="Self.tipo_cancha" Multiplicity="0..1" />
+    <End Role="cancha" Type="Self.cancha" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tipo_cancha">
+        <PropertyRef Name="id_tipo" />
+      </Principal>
+      <Dependent Role="cancha">
+        <PropertyRef Name="id_tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reserva__cancha___1CF15040">
+    <End Role="cancha" Type="Self.cancha" Multiplicity="0..1" />
+    <End Role="reserva" Type="Self.reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cancha">
+        <PropertyRef Name="id_cancha" />
+      </Principal>
+      <Dependent Role="reserva">
+        <PropertyRef Name="cancha_alquilada" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__complejo__dueño__1273C1CD">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="complejo" Type="Self.complejo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="complejo">
+        <PropertyRef Name="dueño" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__reserva__usuario__1BFD2C07">
+    <End Role="usuario" Type="Self.usuario" Multiplicity="0..1" />
+    <End Role="reserva" Type="Self.reserva" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="id_usuario" />
+      </Principal>
+      <Dependent Role="reserva">
+        <PropertyRef Name="usuario_que_alquila" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Complejos2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="cancha" EntityType="Self.cancha" />
+    <EntitySet Name="complejo" EntityType="Self.complejo" />
+    <EntitySet Name="horas" EntityType="Self.horas" />
+    <EntitySet Name="reserva" EntityType="Self.reserva" />
+    <EntitySet Name="tipo_cancha" EntityType="Self.tipo_cancha" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="FK__cancha__horas__2E1BDC42" Association="Self.FK__cancha__horas__2E1BDC42">
+      <End Role="horas" EntitySet="horas" />
+      <End Role="cancha" EntitySet="cancha" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cancha__id_compl__173876EA" Association="Self.FK__cancha__id_compl__173876EA">
+      <End Role="complejo" EntitySet="complejo" />
+      <End Role="cancha" EntitySet="cancha" />
+    </AssociationSet>
+    <AssociationSet Name="FK__cancha__id_tipo__182C9B23" Association="Self.FK__cancha__id_tipo__182C9B23">
+      <End Role="tipo_cancha" EntitySet="tipo_cancha" />
+      <End Role="cancha" EntitySet="cancha" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reserva__cancha___1CF15040" Association="Self.FK__reserva__cancha___1CF15040">
+      <End Role="cancha" EntitySet="cancha" />
+      <End Role="reserva" EntitySet="reserva" />
+    </AssociationSet>
+    <AssociationSet Name="FK__complejo__dueño__1273C1CD" Association="Self.FK__complejo__dueño__1273C1CD">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="complejo" EntitySet="complejo" />
+    </AssociationSet>
+    <AssociationSet Name="FK__reserva__usuario__1BFD2C07" Association="Self.FK__reserva__usuario__1BFD2C07">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="reserva" EntitySet="reserva" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
