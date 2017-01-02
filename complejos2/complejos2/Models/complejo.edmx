@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Complejos2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Complejos2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cancha">
           <Key>
             <PropertyRef Name="id_cancha" />
@@ -85,6 +85,8 @@
           <Property Name="edad" Type="int" />
           <Property Name="canchas_alquiladas" Type="int" />
           <Property Name="reputacion" Type="int" />
+          <Property Name="nombreUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="contraseña" Type="varchar" MaxLength="20" />
         </EntityType>
         <Association Name="FK__cancha__horas__2E1BDC42">
           <End Role="horas" Type="Self.horas" Multiplicity="0..1" />
@@ -190,8 +192,7 @@
             <End Role="reserva" EntitySet="reserva" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Complejos2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -287,6 +288,8 @@
           <Property Name="reputacion" Type="Int32" />
           <NavigationProperty Name="complejo" Relationship="Self.FK__complejo__dueño__1273C1CD" FromRole="usuario" ToRole="complejo" />
           <NavigationProperty Name="reserva" Relationship="Self.FK__reserva__usuario__1BFD2C07" FromRole="usuario" ToRole="reserva" />
+          <Property Name="nombreUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="contraseña" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK__cancha__horas__2E1BDC42">
           <End Role="horas" Type="Self.horas" Multiplicity="0..1" />
@@ -473,6 +476,8 @@
           <EntitySetMapping Name="usuario">
             <EntityTypeMapping TypeName="Complejos2Model.usuario">
               <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+                <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
                 <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
                 <ScalarProperty Name="apellido_usuario" ColumnName="apellido_usuario" />

@@ -76,6 +76,8 @@
     <EntitySetMapping Name="usuario">
       <EntityTypeMapping TypeName="Complejos2Model.usuario">
         <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
           <ScalarProperty Name="id_usuario" ColumnName="id_usuario" />
           <ScalarProperty Name="nombre_usuario" ColumnName="nombre_usuario" />
           <ScalarProperty Name="apellido_usuario" ColumnName="apellido_usuario" />

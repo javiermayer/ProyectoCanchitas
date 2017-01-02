@@ -80,6 +80,8 @@
     <Property Name="edad" Type="int" />
     <Property Name="canchas_alquiladas" Type="int" />
     <Property Name="reputacion" Type="int" />
+    <Property Name="nombreUsuario" Type="varchar" MaxLength="20" />
+    <Property Name="contraseña" Type="varchar" MaxLength="20" />
   </EntityType>
   <Association Name="FK__cancha__horas__2E1BDC42">
     <End Role="horas" Type="Self.horas" Multiplicity="0..1" />

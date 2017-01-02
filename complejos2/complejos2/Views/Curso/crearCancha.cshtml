@@ -1,0 +1,92 @@
+﻿@model complejos2.Models.cancha
+
+@{
+    ViewBag.Title = "crearCancha";
+}
+
+<h2>crearCancha</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>cancha</legend>
+
+        @*@<div class="editor-label">
+            @Html.LabelFor(model => model.id_cancha)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id_cancha)
+            @Html.ValidationMessageFor(model => model.id_cancha)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id_complejo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id_complejo)
+            @Html.ValidationMessageFor(model => model.id_complejo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descripcion)
+            @Html.ValidationMessageFor(model => model.descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.id_tipo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.id_tipo)
+            @Html.ValidationMessageFor(model => model.id_tipo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.horarios)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.horarios)
+            @Html.ValidationMessageFor(model => model.horarios)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.disponible)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.disponible)
+            @Html.ValidationMessageFor(model => model.disponible)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.horas)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.horas)
+            @Html.ValidationMessageFor(model => model.horas)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("regresar a la lista", "ListaMaestraCanchas")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

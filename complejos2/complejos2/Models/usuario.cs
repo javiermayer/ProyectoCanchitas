@@ -29,6 +29,8 @@ namespace complejos2.Models
         public Nullable<int> edad { get; set; }
         public Nullable<int> canchas_alquiladas { get; set; }
         public Nullable<int> reputacion { get; set; }
+        public string nombreUsuario { get; set; }
+        public string contraseña { get; set; }
     
         public virtual ICollection<complejo> complejo { get; set; }
         public virtual ICollection<reserva> reserva { get; set; }

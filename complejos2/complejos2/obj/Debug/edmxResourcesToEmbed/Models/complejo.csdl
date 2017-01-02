@@ -92,6 +92,8 @@
     <Property Name="reputacion" Type="Int32" />
     <NavigationProperty Name="complejo" Relationship="Self.FK__complejo__dueño__1273C1CD" FromRole="usuario" ToRole="complejo" />
     <NavigationProperty Name="reserva" Relationship="Self.FK__reserva__usuario__1BFD2C07" FromRole="usuario" ToRole="reserva" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="contraseña" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <Association Name="FK__cancha__horas__2E1BDC42">
     <End Role="horas" Type="Self.horas" Multiplicity="0..1" />

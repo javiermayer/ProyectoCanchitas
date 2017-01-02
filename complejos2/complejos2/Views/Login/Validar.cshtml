@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Validar";
+}
+
+<h2>ingreso al sistema</h2>
+@using (Html.BeginForm())
+{
+
+    <table>
+        <tr>
+            <td> infgrjese usuario</td>
+            <td> @Html.TextBox("user")</td>
+        </tr>
+
+        <tr>
+            <td> infrese contraseña</td>
+            <td> @Html.Password("pasword")</td>
+        </tr>
+
+        <tr>
+            <td> <input type="submit" value="ingresar" onclick="Validar" /></td>
+
+        </tr>
+
+    </table>
+}
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+}
+<script type="text/javascript">
+    function Validar() {
+        var usuario = $("#user").val();
+        var pasword = $("#pasword").val();
+
+        if (usuario == "") {
+            alert("indique el usuario");
+            $("#user").focus();
+            return false;
+        }
+        if (pasword == "") {
+            alert("indique el pasword");
+            $("#pasword").focus();
+            return false;
+        }
+        return true;
+    }
+</script>

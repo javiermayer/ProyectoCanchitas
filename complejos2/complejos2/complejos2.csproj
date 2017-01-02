@@ -180,12 +180,15 @@
   <ItemGroup>
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\Controllers\CanchaController.cs" />
+    <Compile Include="App_Start\Controllers\LoginController.cs" />
+    <Compile Include="App_Start\Controllers\MantenimientoController.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ComplejoController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="App_Start\Controllers\AccountController.cs" />
+    <Compile Include="App_Start\Controllers\ComplejoController.cs" />
+    <Compile Include="App_Start\Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,6 +197,7 @@
     <Compile Include="Models\cancha.cs">
       <DependentUpon>complejo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\cancha_class.cs" />
     <Compile Include="Models\complejo.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -225,6 +229,7 @@
     <Compile Include="Models\usuario.cs">
       <DependentUpon>complejo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\usuario_class.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -360,6 +365,20 @@
     <Content Include="Views\Complejo\ListaMaestraComplejos.cshtml" />
     <Content Include="Views\Complejo\ListaMaestraCanchas.cshtml" />
     <Content Include="Views\Complejo\HorarioPorCancha.cshtml" />
+    <Content Include="Views\Usuario\Validar.cshtml" />
+    <Content Include="Views\Usuario\NoHallado.cshtml" />
+    <Content Include="Views\Login\NoHallado.cshtml" />
+    <Content Include="Views\Complejo\ListaMaestraCanchas2.cshtml" />
+    <Content Include="Views\Complejo\misCanchas.cshtml" />
+    <Content Include="Views\Login\Validar.cshtml" />
+    <Content Include="Views\Curso\crearCancha.cshtml" />
+    <Content Include="Views\Complejo\crearCancha.cshtml" />
+    <Content Include="Views\Curso\Index.cshtml" />
+    <Content Include="Views\Mantenimiento\Index.cshtml" />
+    <Content Include="Views\Mantenimiento\Details.cshtml" />
+    <Content Include="Views\Mantenimiento\Create.cshtml" />
+    <Content Include="Views\Mantenimiento\Edit.cshtml" />
+    <Content Include="Views\Mantenimiento\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

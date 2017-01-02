@@ -1,0 +1,75 @@
+﻿@model IEnumerable<complejos2.Models.cancha>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Añadir cancha", "Create")
+</p>
+<table>
+    <tr>
+        @*<th>
+            @Html.DisplayNameFor(model => model.id_cancha)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.complejo.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo_cancha.descripcion)
+        </th>
+       @* <th>
+            @Html.DisplayNameFor(model => model.horarios)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.disponible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.horas1.id_horoas)
+        </th>*@
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+         @*   @Html.DisplayFor(modelItem => item.id_cancha)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.complejo.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo_cancha.descripcion)
+        </td>
+       @* <td>
+            @Html.DisplayFor(modelItem => item.horarios)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.disponible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.horas1.id_horoas)
+        </td>*@
+        <td>
+            @Html.ActionLink("Editar", "Edit", new {  id=item.id_cancha  }) |
+            @Html.ActionLink("Detalles", "Details", new {  id=item.id_cancha  }) |
+            @Html.ActionLink("eliminar", "Delete", new {  id=item.id_cancha })
+        </td>
+    </tr>
+}
+
+</table>
